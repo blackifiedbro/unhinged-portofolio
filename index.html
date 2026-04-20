@@ -172,9 +172,34 @@ p {
   right: -100px;
   z-index: -1;
 }
+  .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
+  
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = `${index * 0.1}s`;
+      entry.target.classList.add('show');
+    }
+  });
+});
 
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+});
+</script>
+  
 <body>
   
 <div class="glow"></div>
@@ -192,11 +217,11 @@ p {
   
 <a href="#projects" class="btn">View Projects</a>
 
-<h2>What I Can Build For You</h2>
+<h2 class="fade-up">What I Can Build For You</h2>
 
 <div class="grid grid-3">
 
-<div class="card">
+<div class="card fade-up">
   <h3>Developer Portfolio</h3>
   <p>A clean, modern site to showcase your work and make you look professional.</p>
   <div>
@@ -206,7 +231,7 @@ p {
   </div>
 </div>
 
-<div class="card">
+<div class="card fade-up">
   <h3>Inventory System</h3>
   <p>Simple and efficient item management UI.</p>
   <div>
@@ -216,7 +241,7 @@ p {
   </div>
 </div>
 
-<div class="card">
+<div class="card fade-up">
   <h3>Simulator Game</h3>
   <p>Progression-based gameplay with upgrades.</p>
   <div>
