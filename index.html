@@ -74,7 +74,7 @@ h2 {
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
-<style>
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -185,24 +185,6 @@ p {
 </style>
 </head>
   
-<script>
-const elements = document.querySelectorAll('.fade-up');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      entry.target.style.transitionDelay = `${index * 0.1}s`;
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target); // stops bugging out
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
-  
 <body>
   
 <div class="glow"></div>
@@ -214,9 +196,13 @@ elements.forEach(el => observer.observe(el));
   <p>Portfolio Designer for Roblox Developers</p>
 </div>
 
-<p>I design clean, modern portfolio sites that help Roblox developers get hired.</p>
-  
-<p>Most devs have solid work but no way to present it. I fix that.</p>
+<p style="font-size:18px; margin-top:10px;">
+I design portfolio websites for Roblox developers who want to look serious.
+</p>
+
+<p style="margin-top:15px;">
+Good work isn’t enough if it looks mid. I make sure it doesn’t.
+</p>
   
 <a href="#projects" class="btn">View Projects</a>
 
@@ -224,30 +210,20 @@ elements.forEach(el => observer.observe(el));
 
 <div class="grid grid-3">
 
-<div class="card">
-  <h3>Developer Portfolio</h3>
-  <p>A clean, modern site to showcase your work and make you look professional.</p>
-  <div>
-    <span class="badge">Lua</span>
-    <span class="badge">Animations</span>
-    <span class="badge">Hitboxes</span>
-  </div>
+<div class="card fade-up">
+  <h3>Portfolio Website</h3>
+  <p>A clean site that shows your work and makes you look hireable.</p>
 </div>
 
-<div class="card">
-  <h3>Inventory System</h3>
-  <p>Simple and efficient item management UI.</p>
-  <div>
-    <span class="badge">Lua</span>
-    <span class="badge">UI</span>
-    <span class="badge">DataStore</span>
-  </div>
+<div class="card fade-up">
+  <h3>Custom Design</h3>
+  <p>Layouts designed around your style and projects, not templates.</p>
 </div>
 
-<div class="card">
-  <h3>Simulator Game</h3>
-  <p>Progression-based gameplay with upgrades.</p>
-  <div>
+<div class="card fade-up">
+  <h3>Fast Delivery</h3>
+  <p>Live site, ready to send to clients or studios.</p>
+</div>
     <span class="badge">Lua</span>
     <span class="badge">Game Systems</span>
     <span class="badge">Economy</span>
@@ -266,6 +242,24 @@ elements.forEach(el => observer.observe(el));
 <p>Discord: Unhinged#0001</p>
 
 </div>
+  
+<script>
+const elements = document.querySelectorAll('.fade-up');
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = `${index * 0.1}s`;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+  
 </body>
 </html>
