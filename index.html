@@ -74,29 +74,131 @@ h2 {
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 20% 10%, #1a1f2e, #0b0f17 60%);
+  color: #e5e7eb;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 56px;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+h2 {
+  margin-top: 70px;
+  font-size: 30px;
+}
+
+.header {
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.7);
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 15px;
+  border: 1px solid #1f2937;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #6366f1;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: #1f2937;
+  border-radius: 6px;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+p {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #6366f1;
+  filter: blur(120px);
+  opacity: 0.15;
+  top: -100px;
+  right: -100px;
+  z-index: -1;
+}
 </style>
 </head>
 
 <body>
-
+  
+<div class="glow"></div>
+  
 <div class="container">
 
 <div class="header">
   <h1>Unhinged</h1>
-  <p>Roblox Scripter</p>
+  <p>Portfolio Designer for Roblox Developers</p>
 </div>
 
-<p>I build clean and reliable systems in Roblox.</p>
-
+<p>I design clean, modern portfolio sites that help Roblox developers get hired.</p>
+  
+<p>Most devs have solid work but no way to present it. I fix that.</p>
+  
 <a href="#projects" class="btn">View Projects</a>
 
-<h2 id="projects">Projects</h2>
+<h2>What I Can Build For You</h2>
 
 <div class="grid grid-3">
 
 <div class="card">
-  <h3>Combat System</h3>
-  <p>Smooth combat mechanics with cooldowns and animations.</p>
+  <h3>Developer Portfolio</h3>
+  <p>A clean, modern site to showcase your work and make you look professional.</p>
   <div>
     <span class="badge">Lua</span>
     <span class="badge">Animations</span>
